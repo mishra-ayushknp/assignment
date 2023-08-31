@@ -44,6 +44,7 @@ The useQuery hook component of the react-query package that makes data retrieval
 
 You must import the @tanstack/react-query library, give a queryKey, and use the queryFn to fetch the data from an API to use the useQuery hook to fetch data.
 
+```
 import React from 'react';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
@@ -85,6 +86,7 @@ function Home() {
 }
 
 export default Home;
+```
 
 The useQuery hook sends back an object with details about the query. The statuses of isLoading, isError, and isSuccess are contained in the postQuery object. The states of isLoading, isError, and isSuccess manage the lifespan of the data retrieval process. The data retrieved from the API is contained in the postQuery.data property.
 
@@ -96,13 +98,14 @@ The isSuccess state indicates whether the query successfully retrieves data used
 
 The queryFn provides access to the queryKey. The queryFn only accepts one argument. The parameters needed for the API call are contained in this argument, which is an object. The queryKey is a single of these arguments.
 
-
+```
 useQuery({
     queryKey: ['posts'],
     queryFn: async (obj) => {
       console.log( obj.queryKey );
     }
   })
+```
 
 ## Working with Stale Data
 There are numerous ways to handle outdated data with React queries. When the fetched data expires, the React Query library sends a fresh fetch request to your API. This ensures that you are always providing the most recent data.
@@ -111,11 +114,13 @@ The staleTime and refetchInterval settings let you regulate the rate at which yo
 
 **For Example**
 
+```
 useQuery({
   queryKey: ['...'],
   queryFn: () => {...},
   staleTime: 1000;
 })
+```
 
 The staleTime in this illustration is 1000 milliseconds, or one second. After one second, the data fetched becomes stale, and the React Query library then sends another fetch request to the API.
 
@@ -123,11 +128,13 @@ The refetchInterval option is used to set the amount of time that elapses betwee
 
 **For Example**
 
+```
 useQuery({
   queryKey: ['...'],
   queryFn: () => {...},
   refetchInterval: 6000;
 })
+```
 
 Six seconds pass during the refetchInterval of 6000 milliseconds. After 6 seconds, the React Query will automatically launch a fresh retrieve request to update the cached data.
 
