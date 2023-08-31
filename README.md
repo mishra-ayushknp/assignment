@@ -1,4 +1,4 @@
-#Handling Requests in React using react-query
+# Handling Requests in React using react-query
 
 ## Introduction
 Modern web applications frequently need effective data fetching, caching, and synchronization. React-query, a package from Tanstack, provides a solid response to these difficulties, enabling developers to improve user experiences and ease data administration.
@@ -21,6 +21,7 @@ The fundamental component of React Query is the QueryClient. The QueryClient han
 
 You must import the QueryClientProvider and the QueryClient from the @tanstack/react-query library to utilize them in your application:
 
+```
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -35,6 +36,7 @@ ReactDOM.createRoot(document.getEementd('root')).render(
     </QueryClientProvider>
   </React.StrictMode>
 )
+```
 
 ## useQuery Hook in React Query
 
